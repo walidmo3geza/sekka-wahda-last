@@ -14,4 +14,12 @@ class Reservation extends Model
      * @var bool
      */
     public $incrementing = true;
+
+    protected $primaryKey = 'ID';
+
+    protected $fillable = [
+        'ID', 'TravellerId', 'TripId', 'Accebted'
+    ];
+
+    public $timestamps = false;
 }

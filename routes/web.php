@@ -55,3 +55,31 @@ Route::get('tripDetails/{id}',function ($id){
     $data = \App\Trip::find($id);
     return view('show_trip_details',compact('data'));
 });
+
+Route::get('accept/{id}',function ($id){
+    $data = \App\Reservation::whereId($id)->first();
+    $data->update([
+        'ID'            =>  $data->ID,
+        'TravellerId'   =>  $data->TravellerId,
+        'TripId'        =>  $data->TripId,
+        'Accebted'      =>  1,
+    ]);
+
+    //send notification
+
+    return redirect('/reservation');
+});
+
+Route::get('refuse/{id}',function ($id){
+    $data = \App\Reservation::whereId($id)->first();
+    $data->update([
+        'ID'            =>  $data->ID,
+        'TravellerId'   =>  $data->TravellerId,
+        'TripId'        =>  $data->TripId,
+        'Accebted'      =>  0,
+    ]);
+
+    //send notification
+
+    return redirect('/reservation');
+});

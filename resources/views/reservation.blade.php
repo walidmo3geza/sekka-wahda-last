@@ -16,8 +16,8 @@
                 <td><a href="tripDetails/{{ $row->TripId }}">{{ $row->TripId }}</a> </td>
                 <td>{{ $row->Accebted }}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Accept</a>
-                    <a href="" class="btn btn-danger">Refuse</a>
+                    <a href="/accept/{{ $row->ID }}" class="btn btn-primary">Accept</a>
+                    <a href="/refuse/{{ $row->ID }}" class="btn btn-danger">Refuse</a>
                 </td>
             </tr>
         @endforeach
