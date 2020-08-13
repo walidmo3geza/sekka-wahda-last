@@ -35,9 +35,18 @@
         <br />
         <br />
         <div class="form-group">
+            <label for="adminCreation" class="col-md-4 text-right">Admin Controling</label>
             <div class="col-md-8">
                 <input type="checkbox" name="adminCreation" id="adminCreation" value="1">
-                <label for="adminCreation" class="col-md-4 text-right">A New Admin Creation</label>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="form-group">
+            <label for="reservation" class="col-md-4 text-right">Reservation Handiling</label>
+            <div class="col-md-8">
+                <input type="checkbox" name="reservation" id="reservation" value="1">
             </div>
         </div>
         <br />

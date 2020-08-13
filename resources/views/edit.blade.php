@@ -37,10 +37,18 @@
         <br />
         <br />
         <div class="form-group">
+            <label for="adminCreation" class="col-md-4 text-right">Admin Controlling</label>
             <div class="col-md-8">
-                <input type="checkbox" name="adminCreation" id="adminCreation" value="1">
-                <label for="adminCreation" class="col-md-4 text-right">A New Admin Creation</label>
-                <!-- <input type="text" name="adminCreation" value="{{ $data->adminCreation }}" class="form-control input-lg" /> -->
+                <input type="checkbox" name="adminCreation" id="adminCreation" value="1" {{ $data->adminCreation ? 'checked' : '' }}>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="form-group">
+            <label for="reservation" class="col-md-4 text-right" >Reservation Handling</label>
+            <div class="col-md-8">
+                <input type="checkbox" name="reservation" id="reservation" value="1" {{ $data->reservation ? 'checked' : '' }}>
             </div>
         </div>
         <br />

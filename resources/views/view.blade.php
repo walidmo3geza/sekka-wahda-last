@@ -9,6 +9,7 @@
         <br />
         <h3>Name - {{ $data->name }}</h3>
         <h3>Email - {{ $data->email }} </h3>
-        <h3>A New Admin Creation - {{ $data->adminCreation }}</h3>
+        <h3>Admin Controlling - {{ $data->adminCreation }}</h3>
+        <h3>Reservation Handling - {{ $data->reservation }}</h3>
     </div>
 @endsection

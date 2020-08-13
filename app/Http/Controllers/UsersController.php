@@ -41,11 +41,18 @@ class UsersController extends Controller
             $newAdminCreation=1;
         else
             $newAdminCreation=0;
+
+        if ($request->reservation)
+            $newReservation=1;
+        else
+            $newReservation=0;
+
         $form_data = array(
             'name'             =>   $request->name,
             'email'            =>   $request->email,
             'password'         =>   Hash::make($request['pass']),
             'adminCreation'    =>   $newAdminCreation,
+            'reservation'      =>   $newReservation,
             'api_token'        =>   Str::random(60)
         );
 
@@ -91,11 +98,18 @@ class UsersController extends Controller
             $newAdminCreation=1;
         else
             $newAdminCreation=0;
+
+        if ($request->reservation)
+            $newReservation=1;
+        else
+            $newReservation=0;
+
         $form_data = array(
             'name'              =>   $request->name,
             'email'             =>   $request->email,
             'password'          =>   $request->password,
-            'adminCreation'     =>   $newAdminCreation
+            'adminCreation'     =>   $newAdminCreation,
+            'reservation'       =>   $newReservation,
         );
 
         User::whereId($id)->update($form_data);
