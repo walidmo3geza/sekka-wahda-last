@@ -41,7 +41,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}">
     ===============================================================================================-->
 </head>
-<body>
+<bodyz>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -108,5 +108,5 @@
 <script src="{{ url('vendor/countdowntime/countdowntime.js') }}"></script>-->
 <!--===============================================================================================
 <script src="{{ url('js/main.js') }}"></script>-->
-</body>
+</bodyz>
 </html>

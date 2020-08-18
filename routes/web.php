@@ -64,9 +64,20 @@ Route::get('accept/{id}',function ($id){
         'TripId'        =>  $data->TripId,
         'Accebted'      =>  1,
     ]);
-
+    $trip = \App\Trip::find($data->TripId);
     //send notification
-
+    \App\Notification::create([
+        'ReceiverID'            =>  $data->TravellerId,
+        'RaiserID'              =>  $trip->driver->UserID,
+        'Message_'              =>  'You hav a traveler in your trip.',
+        'TypeOfNotification'    =>  'ReserveAccepredDriver',
+    ]);
+    \App\Notification::create([
+        'ReceiverID'            =>  $trip->driver->UserID,
+        'RaiserID'              =>  $data->TravellerId,
+        'Message_'              =>  'You request accepted.',
+        'TypeOfNotification'    =>  'reserveAcceptedTraveller',
+    ]);
     return redirect('/reservation');
 })->middleware('auth');
 
@@ -78,8 +89,13 @@ Route::get('refuse/{id}',function ($id){
         'TripId'        =>  $data->TripId,
         'Accebted'      =>  0,
     ]);
-
+    $trip = \App\Trip::find($data->TripId);
     //send notification
-
+    \App\Notification::create([
+        'ReceiverID'            =>  $trip->driver->UserID,
+        'RaiserID'              =>  $data->TravellerId,
+        'Message_'              =>  'Sorry ,your request refused.',
+        'TypeOfNotification'    =>  'ReserveNotAccepted',
+    ]);
     return redirect('/reservation');
 })->middleware('auth');

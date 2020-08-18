@@ -12,5 +12,5 @@ class Notification extends Model
 
     protected $table = 'notification_';
 
-
+    public $timestamps = false;
 }
